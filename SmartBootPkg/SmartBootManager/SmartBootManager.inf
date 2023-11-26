@@ -1,0 +1,32 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = SmartBootManager
+  FILE_GUID                      = f03c2750-b6d2-4c54-bff8-c592ce80c6d2
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+
+
+[Sources]
+  SmartBootManager.c
+  SmartBootManager.h
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiBootServicesTableLib
+  UefiBootManagerLib
+  DevicePathLib
+  UefiLib
+
+[Protocols]
+  gEfiSerialIoProtocolGuid                      ## CONSUMES
+  gEfiDevicePathProtocolGuid                    ## CONSUMES
+  gEfiLoadedImageProtocolGuid                   ## CONSUMES
+  gEfiLoadedImageDevicePathProtocolGuid         ## CONSUMES
+[FeaturePcd]
+
+[Pcd]
